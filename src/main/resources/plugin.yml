@@ -1,0 +1,8 @@
+name: Coins
+version: '${project.version}'
+main: dev.laux.coins.Coins
+api-version: '1.20'
+author: jonax
+commands:
+  coins:
+    description: Zeigt deine aktuellen Coins an.

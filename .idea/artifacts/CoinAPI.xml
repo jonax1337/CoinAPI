@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CoinAPI">
+    <output-path>$PROJECT_DIR$/out/artifacts/CoinAPI</output-path>
+    <root id="archive" name="CoinAPI.jar">
+      <element id="module-output" name="CoinAPI" />
+    </root>
+  </artifact>
+</component>
