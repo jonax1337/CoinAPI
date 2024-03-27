@@ -6,10 +6,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class MySQLConnector {
+public class Connector {
     private Connection connection;
 
-    public MySQLConnector(FileConfiguration config) throws ClassNotFoundException, SQLException {
+    public Connector(FileConfiguration config) throws ClassNotFoundException, SQLException {
         // Stelle sicher, dass der JDBC-Treiber geladen ist
         Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -19,7 +19,7 @@ public class MySQLConnector {
         String username = config.getString("mysql.username");
         String password = config.getString("mysql.password");
 
-        String url = "jdbc:mysql://" + host + ":" + port + "/" + database + "?useSSL=false?autoReconnect=true";
+        String url = "jdbc:mysql://" + host + ":" + port + "/" + database + "?useSSL=false&autoReconnect=true";
         this.connection = DriverManager.getConnection(url, username, password);
     }
 

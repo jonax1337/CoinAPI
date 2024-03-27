@@ -11,7 +11,8 @@ public class JoinListener implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         try {
             // Hier wird der Benutzer in der Datenbank sichergestellt
-            Coins.getInstance().getCoinAPI().ensurePlayer(event.getPlayer().getUniqueId());
+            Coins.getInstance().getCoinAPI().ensurePlayerCoins(event.getPlayer().getUniqueId());
+            Coins.getInstance().getCoinAPI().ensurePlayerRewards(event.getPlayer().getUniqueId());
         } catch (Exception e) {
             e.printStackTrace();
         }

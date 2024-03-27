@@ -4,14 +4,14 @@ import dev.laux.coins.api.CoinAPI;
 import dev.laux.coins.commands.CoinsCommand;
 import dev.laux.coins.events.JoinListener;
 import dev.laux.coins.mysql.Database;
-import dev.laux.coins.mysql.MySQLConnector;
+import dev.laux.coins.mysql.Connector;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.configuration.file.FileConfiguration;
+
 import java.sql.SQLException;
 public final class Coins extends JavaPlugin {
 
     private static Coins instance;
-    private MySQLConnector mySQLConnector;
+    private Connector mySQLConnector;
     private CoinAPI coinAPI;
 
     @Override
@@ -27,7 +27,7 @@ public final class Coins extends JavaPlugin {
         registerCommands();
         // Start MySQL Connection
         try {
-            mySQLConnector = new MySQLConnector(getConfig());
+            mySQLConnector = new Connector(getConfig());
             Database db = new Database(mySQLConnector);
             this.coinAPI = new CoinAPI(db);
             getLogger().info("CoinAPI wurde erfolgreich geladen!");
