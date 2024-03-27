@@ -19,7 +19,7 @@ public class MySQLConnector {
         String username = config.getString("mysql.username");
         String password = config.getString("mysql.password");
 
-        String url = "jdbc:mysql://" + host + ":" + port + "/" + database + "?useSSL=false";
+        String url = "jdbc:mysql://" + host + ":" + port + "/" + database + "?useSSL=false?autoReconnect=true";
         this.connection = DriverManager.getConnection(url, username, password);
     }
 
